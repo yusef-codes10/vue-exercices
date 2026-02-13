@@ -1,1 +1,20 @@
-<script setup></script>
+<script setup>
+import MyStudent from './MyStudent.vue'
+
+import { ref } from 'vue'
+
+const students = ref([
+  { name: 'Alice', scores: [85, 92, 78, 90] },
+  { name: 'Bob', scores: [70, 65, 80, 75] },
+  { name: 'Charlie', scores: [95, 98, 100, 97] },
+  { name: 'Diana', scores: [60, 55, 58, 62] },
+])
+</script>
+
+<template>
+  <div class="students">
+    <div class="student">
+      <MyStudent v-for="student in students" :key="student.name" :student="student" />
+    </div>
+  </div>
+</template>
