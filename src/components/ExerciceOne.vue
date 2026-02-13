@@ -33,6 +33,13 @@ const subTotal = computed(() => {
   return total
 })
 
+const totalTax = computed(() => {
+  let totalTaxAmount = 0
+  for (let item of cart.value) {
+    totalTaxAmount = item.price * item.quantity * item.taxRate
+  }
+  return totalTaxAmount
+})
 // const quantity = ref()
 </script>
 
@@ -49,6 +56,8 @@ const subTotal = computed(() => {
       <li>Tax rate: {{ item.taxRate }}</li>
     </ul>
     <b>Subtotal: {{ subTotal }}</b>
+    <br />
+    <b>Tax: {{ totalTax }}</b>
   </div>
 </template>
 
