@@ -40,6 +40,11 @@ const totalTax = computed(() => {
   }
   return totalTaxAmount
 })
+
+// items count
+const itemsCount = computed(() => {
+  return cart.value.length
+})
 // const quantity = ref()
 </script>
 
@@ -58,6 +63,8 @@ const totalTax = computed(() => {
     <b>Subtotal: {{ subTotal }}</b>
     <br />
     <b>Tax: {{ totalTax }}</b>
+    <br />
+    <b>Item Count: {{ itemsCount }}</b>
   </div>
 </template>
 
