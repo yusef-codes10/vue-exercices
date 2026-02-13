@@ -27,7 +27,7 @@ console.log(cart.value)
 
 const subTotal = () => {
   let total = 0
-  for (let item in cart.value) {
+  for (let item of cart.value) {
     total += item.quantity * item.price
   }
   return total
