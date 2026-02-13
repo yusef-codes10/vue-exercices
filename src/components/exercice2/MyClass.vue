@@ -44,9 +44,22 @@ const students = ref([
 
 // more students
 const name = ref('')
+const math = ref(0)
+const science = ref(0)
+const english = ref(0)
+const history = ref(0)
+
 const addStudent = () => {
   if (name.value.trim() !== '') {
-    students.value.push({ name: name.value, scores: [] })
+    students.value.push({
+      name: name.value,
+      scores: [
+        { subject: 'Math', score: math },
+        { subject: 'Science', score: science },
+        { subject: 'English', score: english },
+        { subject: 'History', score: history },
+      ],
+    })
   }
   name.value = ''
 }
