@@ -28,6 +28,16 @@ console.log(cart.value)
 
 <template>
   <h1>Exercice 1</h1>
+  <h2>Cart:</h2>
+  <div class="cart">
+    <ul v-for="item in cart" :key="item.id">
+      <li>id: {{ item.id }}</li>
+      <li>Product: {{ item.name }}</li>
+      <li>Price: ${{ item.price }}</li>
+      <li>quantity: {{ item.quantity }}</li>
+      <li>Tax rate: {{ item.taxRate }}</li>
+    </ul>
+  </div>
 </template>
 
 <style scoped></style>
