@@ -15,7 +15,7 @@
 // itemCount - Total number of items in cart
 // averageItemPrice - Average price per item
 
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const cart = ref([
   { id: 1, name: 'Laptop', price: 999, quantity: 1, taxRate: 0.15 },
@@ -24,6 +24,14 @@ const cart = ref([
 ])
 
 console.log(cart.value)
+
+const subTotal = () => {
+  let total = 0
+  for (let item in cart.value) {
+    total += item.quantity * item.price
+  }
+  return total
+}
 </script>
 
 <template>
@@ -37,6 +45,7 @@ console.log(cart.value)
       <li>quantity: {{ item.quantity }}</li>
       <li>Tax rate: {{ item.taxRate }}</li>
     </ul>
+    <b>Subtotal: {{ subTotal() }}</b>
   </div>
 </template>
 
