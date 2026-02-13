@@ -25,30 +25,30 @@ const cart = ref([
 
 console.log(cart.value)
 
-const subTotal = () => {
+const subTotal = computed(() => {
   let total = 0
   for (let item of cart.value) {
-    total += quantity.value * item.price
+    total += item.quantity * item.price
   }
   return total
-}
+})
 
-const quantity = ref()
+// const quantity = ref()
 </script>
 
 <template>
   <h1>Exercice 1</h1>
   <h2>Cart:</h2>
-  <input type="text" v-model="quantity" @input="subTotal()" />
+  <!-- <input type="text" v-model="quantity" /> -->
   <div class="cart">
     <ul v-for="item in cart" :key="item.id">
       <li>id: {{ item.id }}</li>
       <li>Product: {{ item.name }}</li>
       <li>Price: ${{ item.price }}</li>
-      <li>quantity: {{ quantity }}</li>
+      <li>quantity: {{ item.quantity }}</li>
       <li>Tax rate: {{ item.taxRate }}</li>
     </ul>
-    <b>Subtotal: {{ subTotal() }}</b>
+    <b>Subtotal: {{ subTotal }}</b>
   </div>
 </template>
 
