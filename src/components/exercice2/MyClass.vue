@@ -23,7 +23,7 @@ const students = ref([
     ],
   },
   {
-    name: 'Charlie',
+    name: 'Charlotte',
     scores: [
       { subject: 'Math', score: 95 },
       { subject: 'Science', score: 98 },
@@ -59,9 +59,27 @@ const addStudent = () => {
     </div>
     <div class="admin">
       <h2>Enter a new Student:</h2>
-      <label for="name">Name: </label>
-      <input type="text" id="name" v-model="name" />
-      <button @click="addStudent">Add Student</button>
+      <div class="label">
+        <label for="name">Name: </label>
+        <input type="text" id="name" v-model="name" />
+        <button @click="addStudent">Add Student</button>
+      </div>
+      <div class="label">
+        <label for="math">Math: </label>
+        <input type="text" id="math" v-model="math" />
+      </div>
+      <div class="label">
+        <label for="science">Science: </label>
+        <input type="text" id="science" v-model="science" />
+      </div>
+      <div class="label">
+        <label for="english">English: </label>
+        <input type="text" id="english" v-model="english" />
+      </div>
+      <div class="label">
+        <label for="history">History: </label>
+        <input type="text" id="history" v-model="history" />
+      </div>
     </div>
   </div>
 </template>
@@ -73,6 +91,16 @@ const addStudent = () => {
 
 .student {
   width: 50%;
-  background-color: seagreen;
+  /* background-color: seagreen; */
+}
+
+.admin {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  display: inline-flex;
+  gap: 1rem;
+  margin: 1rem;
 }
 </style>
