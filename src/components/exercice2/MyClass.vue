@@ -4,10 +4,42 @@ import MyStudent from './MyStudent.vue'
 import { ref } from 'vue'
 
 const students = ref([
-  { name: 'Alice', scores: [85, 92, 78, 90] },
-  { name: 'Jake', scores: [70, 65, 80, 75] },
-  { name: 'Charlie', scores: [95, 98, 100, 97] },
-  { name: 'Diana', scores: [60, 55, 58, 62] },
+  {
+    name: 'Alice',
+    scores: [
+      { subject: 'Math', score: 85 },
+      { subject: 'Science', score: 92 },
+      { subject: 'English', score: 78 },
+      { subject: 'History', score: 90 },
+    ],
+  },
+  {
+    name: 'Jake',
+    scores: [
+      { subject: 'Math', score: 70 },
+      { subject: 'Science', score: 65 },
+      { subject: 'English', score: 80 },
+      { subject: 'History', score: 75 },
+    ],
+  },
+  {
+    name: 'Charlie',
+    scores: [
+      { subject: 'Math', score: 95 },
+      { subject: 'Science', score: 98 },
+      { subject: 'English', score: 100 },
+      { subject: 'History', score: 97 },
+    ],
+  },
+  {
+    name: 'Diana',
+    scores: [
+      { subject: 'Math', score: 60 },
+      { subject: 'Science', score: 55 },
+      { subject: 'English', score: 58 },
+      { subject: 'History', score: 62 },
+    ],
+  },
 ])
 
 // more students

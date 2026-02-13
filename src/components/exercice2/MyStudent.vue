@@ -13,7 +13,9 @@ defineProps({
   <ul>
     <li>Name {{ student.name }}</li>
     <ul>
-      <li v-for="(score, index) in student.scores" :key="index">{{ score }}</li>
+      <li v-for="score in student.scores" :key="score.subject">
+        {{ score.subject }}: {{ score.score }}
+      </li>
     </ul>
   </ul>
 </template>
