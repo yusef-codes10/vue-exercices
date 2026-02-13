@@ -28,7 +28,7 @@ console.log(cart.value)
 const subTotal = () => {
   let total = 0
   for (let item of cart.value) {
-    total += item.quantity * item.price
+    total += quantity.value * item.price
   }
   return total
 }
@@ -39,7 +39,7 @@ const quantity = ref()
 <template>
   <h1>Exercice 1</h1>
   <h2>Cart:</h2>
-  <input type="text" v-model="quantity" />
+  <input type="text" v-model="quantity" @input="subTotal()" />
   <div class="cart">
     <ul v-for="item in cart" :key="item.id">
       <li>id: {{ item.id }}</li>
