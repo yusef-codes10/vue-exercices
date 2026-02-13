@@ -14,7 +14,7 @@ const students = ref([
 const name = ref('')
 const addStudent = () => {
   if (name.value.trim() !== '') {
-    students.value.push({ name: name, scores: [] })
+    students.value.push({ name: name.value, scores: [] })
   }
   name.value = ''
 }
