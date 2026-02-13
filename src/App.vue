@@ -1,6 +1,6 @@
 <script setup>
 import ExerciceOne from './components/ExerciceOne.vue'
-import ExerciceTwo from './components/ExerciceTwo.vue'
+import ExerciceTwo from './components/exercice2/ExerciceTwo.vue'
 </script>
 
 <template>
